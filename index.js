@@ -1,5 +1,6 @@
 /* Aşağıda global olarak tanımlanmış değişkenler bulunmaktadır, bunları değiştirmeyiniz. Açıklamaları takip ederek görevleri tamamlayın. */
 
+//#region definition
 const pi = 3.14159;
 
 const sayilar = [
@@ -29,6 +30,10 @@ const sayilar = [
   867.7,
 ];
 
+//#endregion definition
+
+//#region Example
+
 /* ÖRNEK GÖREV: KareninAlani fonksiyonunu kullanarak aşağıdakileri uygulayın: 
 	1. Karenin kenar uzunluğunu fonksiyonun tek parametresi olarak alacak 
 	2. Karenin alanını hesaplayacak (💡 İPUCU: karenin alanı = karenin kenar uzunluğunun karesi)
@@ -42,6 +47,10 @@ function KareninAlani(kenaruzunlugu) {
 
 /* (Oto test yok) Yukarıdaki KareninAlani fonksiyonunu kenar uzunluğu = 10 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
+//#endregion Example
+
+//#region  TaskOne
+
 /* GÖREV 1:  
 - CemberinCevresi fonksiyonunu kullanarak aşağıdaki yönergeleri uygulayın:
 	1. CemberinCevresi fonksiyonu parametre olarak sadece çemberin yarıçapını alacaktır. 
@@ -50,11 +59,16 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(r) {
+  const cevre = 2 * pi * r;
+  return cevre;
 }
-
+console.log(CemberinCevresi(5));
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
+
+//#endregion TaskOne
+
+//#region TaskTwo
 
 /* 	GÖREV 2:  
 - CemberinAlani fonksiyonunu kullanarak aşağıdaki yönergeleri uygulayın:
@@ -64,16 +78,23 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(r, pi) {
+  return pi * r ** 2;
 }
+console.log(CemberinAlani(15, pi));
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
+//#endregion TaskTwo
+
+//#region TaskTri
+
 /* 	GÖREV 3:
-	- Sayfanın en üstünde global değişken olarak tanımlanmış bir sayilar dizisi bulunmaktadır. Bu dizi içinde 0 ile 1000 arasında rasgele oluşturulmuş tam sayılar ve ondalıklı sayılar bulunmaktadır. Bu diziyi kullanarak aşağıdakileri uygulayın:
+	- Sayfanın en üstünde global değişken olarak tanımlanmış bir sayilar dizisi bulunmaktadır. Bu dizi içinde 0 ile 1000 arasında rasgele oluşturulmuş 
+  tam sayılar ve ondalıklı sayılar bulunmaktadır. 
+  Bu diziyi kullanarak aşağıdakileri uygulayın:
 		3a. enbuyuk ve enkucuk isminde 2 adet değişken tanımlayın ve sayilar dizisindeki en küçük sayı ile en büyük sayıyı bu değişkenlere atayın. (for döngüsü kullanın)
-		
+
 		3b. `ucetambolunenler` adında bir dizi tanımlayın ve bu diziye sayilar dizisindeki 3'ün tam katı olan sayıları atayın (.forEach metodunu kullanın)
 		
 		3c. `ucetambolunenler` dizisindeki sayıların toplamını .reduce metoduyla bulup, sonucu `ucebolunenlerintoplami` değişkenine yazdırın (.reduce metodunu kullanın)
@@ -82,44 +103,97 @@ function CemberinAlani(/* kodlar buraya */) {
 		
 		3e. besyuzdenkucuksayilar dizisindeki sayıları küçükten büyüğe sıralayıp `siralisayilar` adındaki bir diziye aktarın (.sort metodunu kullanın)
 		
-		3f. `tekraredensayilar` adında bir dizi oluşturun. sayilar dizisi içerisindeki bazı sayılar birden fazla kere yazılmış. sayilar dizisi içerisinde birden fazla kez yazılmış sayıları tespit ederek kaç kere tekrar edildiğini belirten bir string oluşturulup `tekraredensayilar` dizisine aktarılmasını istiyoruz. Örnek string: "{sayı} sayısı {tekrarSayisi} kere tekrar edilmiştir"
+		3f. `tekraredensayilar` adında bir dizi oluşturun. sayilar dizisi içerisindeki bazı sayılar birden fazla kere yazılmış. sayilar dizisi içerisinde birden fazla kez 
+    yazılmış sayıları tespit ederek kaç kere tekrar edildiğini belirten bir string oluşturulup `tekraredensayilar` dizisine aktarılmasını istiyoruz. Örnek string: 
+    "{sayı} sayısı {tekrarSayisi} kere tekrar edilmiştir"
 		ÖRNEK: sayilar dizisi içerisinde 45 sayısı 3 kere yazılmış. "45 sayısı 3 tekrar edilmiştir" stringini `tekraredensayilar` dizisine aktaracağız.
-		💡 İPUCU: Tekrar edilen sayıları ve kaç kere tekrar edildiğini kaydetmek için bir nesne tanımlamalısınız, bu görevi yapabilmek için en az 2 kere döngü yazmalısınız. Birinci döngüde hangi sayının kaç kere tekrar edildiğini tespit edip, 2. döngüde stringi oluşturup verilen diziye aktarmalısınız.
+		💡 İPUCU: Tekrar edilen sayıları ve kaç kere tekrar edildiğini kaydetmek için bir nesne tanımlamalısınız, bu görevi yapabilmek için en az 2 kere döngü yazmalısınız. 
+    Birinci döngüde hangi sayının kaç kere tekrar edildiğini tespit edip, 2. döngüde stringi oluşturup verilen diziye aktarmalısınız.
 */
 
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 
-let ucetambolunenler,
+let ucetambolunenler = [],
   enkucuk,
   enbuyuk,
   ucebolunenlerintoplami,
   besyuzdenkucuksayilar,
-  siralisayilar,
-  tekraredensayilar;
+  siralisayilar = [...sayilar],
+  tekraredensayilar = [];
 
-// 3a çözümü
+//#region 3a çözümü
 
-/* kodlar buraya */
+enbuyuk = sayilar[0];
+enkucuk = sayilar[0];
 
-// 3b çözümü:
+for (let i = 0; i < sayilar.length; i++) {
+  sayilar[i] > enbuyuk ? (enbuyuk = sayilar[i]) : null;
+  sayilar[i] < enkucuk ? (enkucuk = sayilar[i]) : null;
+}
+console.log(enbuyuk, enkucuk);
+//#endregion 3a çözümü
 
-/* kodlar buraya */
+//#region 3b çözümü:
 
-// 3c çözümü:
+sayilar.forEach((element) => {
+  element % 3 === 0 ? ucetambolunenler.push(element) : null;
+});
+console.log(ucetambolunenler);
+//#endregion 3b çözümü
 
-/* kodlar buraya */
+//#region 3c çözümü:
 
-// 3d çözümü
+ucebolunenlerintoplami = ucetambolunenler.reduce((acc, index) => {
+  acc += index;
+  return acc;
+}, 0);
 
-/* kodlar buraya */
+console.log(ucebolunenlerintoplami);
+//#endregion 3x çözümü
 
-// 3e çözümü
+//#region 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500);
 
-// 3f çözümü
+console.log(besyuzdenkucuksayilar);
 
-/* kodlar buraya */
+//#endregion 3d çözümü
+
+//#region 3e çözümü
+
+siralisayilar.sort((a, b) => a - b);
+
+console.log(siralisayilar);
+
+//#endregion 3e çözümü
+
+//#region 3f çözümü
+
+const obj = {}; // Her sayının tekrar sayısını tutmak için
+
+//Hangi sayılar kaç kere tekrar ediyor?
+for (let i = 0; i < sayilar.length; i++) {
+  let sayi1 = sayilar[i];
+  for (let j = i + 1; j < sayilar.length; j++) {
+    let sayi2 = sayilar[j];
+    if (sayi1 === sayi2) {
+      // Eğer daha önce sayılmadıysa, başlangıç değeri 2
+      if (!obj[sayi1]) {
+        obj[sayi1] = 2;
+      } else {
+        obj[sayi1]++;
+      }
+    }
+  }
+}
+
+for (let sayi in obj) {
+  tekraredensayilar.push(`${sayi} sayısı ${obj[sayi]} kere tekrar edilmiştir`);
+}
+
+console.log(tekraredensayilar);
+
+//#endregion 3f çözümü
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
@@ -140,3 +214,5 @@ module.exports = {
   siralisayilar,
   tekraredensayilar,
 };
+
+//#endregion TaskTri
